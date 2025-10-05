@@ -1,0 +1,22 @@
+{
+  "dashboard": "Dashboard",
+  "posts": "Posts",
+  "post": "Post",
+  "create_post": "Create Post",
+  "create": "Create",
+  "update": "Update",
+  "delete": "Delete",
+  "view": "View",
+  "title": "Title",
+  "likes": "Likes",
+  "dislikes": "Dislikes",
+  "login": "Login",
+  "logout": "Logout",
+  "actions": "Actions",
+  "show": "Show",
+  "of": "Of",
+  "items": "Items",
+  "insure_delete": "Are you sure you want to delete",
+  "submit": "Submit",
+  "select_language": "Select Language"
+}

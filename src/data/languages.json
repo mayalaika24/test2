@@ -1,0 +1,12 @@
+[
+  {
+    "icon": "/icons/us.svg",
+    "title": "english",
+    "code": "en"
+  },
+  {
+    "icon": "/icons/sy.svg",
+    "title": "arabic",
+    "code": "ar"
+  }
+]

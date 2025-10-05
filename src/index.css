@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Montserrat;
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('./assets/fonts/MontserratAlternates-Bold.ttf');
+}
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url('./assets/fonts/MontserratAlternates-SemiBold.ttf');
+}
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url('./assets/fonts/MontserratAlternates-Medium.ttf');
+}
+@font-face {
+  font-family: Rubik;
+  src: url('./assets/fonts/Rubik-Regular.ttf');
+}
+@font-face {
+  font-family: Rubik-Bold;
+  src: url('./assets/fonts/Rubik-Bold.ttf');
+}
+@font-face {
+  font-family: Rubik-SemiBold;
+  src: url('./assets/fonts/Rubik-SemiBold.ttf');
+}
+@font-face {
+  font-family: Rubik-Medium;
+  src: url('./assets/fonts/Rubik-Medium.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: Montserrat, Rubik;
+  user-select: none;
+  font-size: 15px;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.lrt {
+  direction: ltr;
+}
+/* svg path {
+  fill: #696969 !important;
+} */
+
+.active svg path {
+  fill: #1f3a8a !important;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.3s ease-in-out;
+}
+
+.is-open {
+  grid-template-rows: 1fr;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: #1f3a8a;
+    --primary-foreground: #e2e8f0;
+    --alice-blue: #f1f5f9;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --green: #10b981;
+    --green-500: #f0fff9;
+    --red: #ef4444;
+    --red-500: #fff4f4;
+    --gray-600: #aeaeae;
+    --gray-50: #f9f9f9;
+    --toastify-color-error: var(--red);
+    --toastify-color-success: var(--green);
+    --lg-shadow: 1px 0px 30px 0px #00000012;
+    --container-shadow: 0px 0px 20px 0px #00000012;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.badge {
+  width: 80px;
+  height: 25px;
+  border: 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-link {
+  background-color: var(--primary-foreground);
+  color: var(--primary);
+}
+.active-link svg path {
+  fill: var(--primary) !important;
+}
+.point-active {
+  background-color: var(--green);
+}
+.point-inactive {
+  background-color: var(--red);
+}
+.active {
+  background-color: var(--green-500);
+}
+.active,
+.text-active {
+  color: var(--green);
+}
+.blocked {
+  background-color: var(--red-500);
+  color: var(--red);
+}
+
+.inactive {
+  color: var(--gray-600);
+  background-color: var(--gray-50);
+}
+.blocked,
+.text-inactive {
+  color: var(--red);
+}
+
+button:focus {
+  outline: none;
+}
+.no-wrap-text {
+  white-space: nowrap;
+}
+[data-radix-popper-content-wrapper] {
+  width: 90%;
+  max-width: 200px;
+  z-index: 1000 !important;
+}
+/*------------------------- color picker -----------------------*/
+.react-colorful {
+  width: 125px !important;
+  height: 125px !important;
+  position: absolute !important;
+  z-index: 10 !important;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100% + 4px);
+  border-radius: 8px !important;
+}
+.react-colorful__hue.react-colorful__last-control {
+  height: 6px !important;
+}
+.react-colorful__pointer {
+  width: 16px !important;
+  height: 16px !important;
+}
+.react-colorful__saturation {
+  border-bottom: none !important;
+}
+/*------------------------------------------------------------*/
+/*--------------------- leaflet ------------------------------*/
+.leaflet-container {
+  border-radius: 8px;
+}
+/*------------------------------------------------------------*/
