@@ -3,6 +3,9 @@
   "posts": "Posts",
   "post": "Post",
   "create_post": "Create Post",
+  "create_book": "Create Book",
+  "book": "Book",
+  "books": "Books",
   "create": "Create",
   "update": "Update",
   "delete": "Delete",
@@ -18,5 +21,7 @@
   "items": "Items",
   "insure_delete": "Are you sure you want to delete",
   "submit": "Submit",
-  "select_language": "Select Language"
+  "select_language": "Select Language",
+  "rating": "Rating",
+  "author": "Author"
 }

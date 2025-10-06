@@ -17,7 +17,7 @@ import useNavigation from '../../custom-hooks/useNavigation';
 
 const FLAG_IMAGES: Record<LanguageCode, string> = {
   en: '/icons/us.svg',
-  ar: '/icons/sy.svg'
+  ar: '/icons/sy.svg',
 };
 const imageIconClass = 'h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full';
 const Navbar = () => {

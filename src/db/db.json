@@ -1,0 +1,168 @@
+{
+  "books": [
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "title": "The Whispering Grove",
+      "author": "Lena Moreau",
+      "genre": "Fantasy",
+      "year": 2021,
+      "rating": 4.6,
+      "pages": 412,
+      "publisher": "Silverleaf Press",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": 101,
+        "name": "Emily Carter",
+        "borrowedDate": "2025-09-18"
+      }
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb65",
+      "title": "Fragments of Tomorrow",
+      "author": "Kai Donovan",
+      "genre": "Science Fiction",
+      "year": 2023,
+      "rating": 4.3,
+      "pages": 389,
+      "publisher": "Orion Books",
+      "isBorrowed": false,
+      "borrowedBy": null
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcbsd",
+      "title": "A Study in Smoke",
+      "author": "R. J. Calder",
+      "genre": "Mystery",
+      "year": 2019,
+      "rating": 4.1,
+      "pages": 301,
+      "publisher": "Blackbird Publishing",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": 102,
+        "name": "Daniel Kim",
+        "borrowedDate": "2025-10-01"
+      }
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dss6d",
+      "title": "Letters from the Lighthouse",
+      "author": "Eliza Stone",
+      "genre": "Historical Fiction",
+      "year": 2020,
+      "rating": 4.8,
+      "pages": 457,
+      "publisher": "Maple House",
+      "isBorrowed": false,
+      "borrowedBy": null
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0de8b3dcb6d",
+      "title": "Echoes Beneath the Waves",
+      "author": "Noah Sinclair",
+      "genre": "Romance",
+      "year": 2022,
+      "rating": 4.5,
+      "pages": 332,
+      "publisher": "Oceanheart Books",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": 103,
+        "name": "Sophia Nguyen",
+        "borrowedDate": "2025-09-27"
+      }
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0ax7b3dcb6d",
+      "title": "The Last Equation",
+      "author": "Dr. Mira Patel",
+      "genre": "Thriller",
+      "year": 2024,
+      "rating": 4.7,
+      "pages": 379,
+      "publisher": "PulseLine Press",
+      "isBorrowed": false,
+      "borrowedBy": null
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcmo6",
+      "title": "Wildflowers and Warnings",
+      "author": "Harper Quinn",
+      "genre": "Drama",
+      "year": 2020,
+      "rating": 4,
+      "pages": 295,
+      "publisher": "Crescent Books",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": 104,
+        "name": "Lucas Johnson",
+        "borrowedDate": "2025-09-30"
+      }
+    },
+    {
+      "id": "9b1dkd4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "title": "The Astral Cartographer",
+      "author": "Elias Grant",
+      "genre": "Adventure",
+      "year": 2021,
+      "rating": 4.4,
+      "pages": 410,
+      "publisher": "Compass & Quill",
+      "isBorrowed": false,
+      "borrowedBy": null
+    },
+    {
+      "id": "9b1deeb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "title": "Midnight on Mars",
+      "author": "Tessa Rowe",
+      "genre": "Science Fiction",
+      "year": 2025,
+      "rating": 4.9,
+      "pages": 368,
+      "publisher": "Nova Horizon",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": 105,
+        "name": "Ava Thompson",
+        "borrowedDate": "2025-10-03"
+      }
+    },
+    {
+      "id": "9b1deb4d-3b7d-4xld-9bdd-2b0d7b3dcb6d",
+      "title": "Beneath the Paper Sky",
+      "author": "Owen Hart",
+      "genre": "Literary Fiction",
+      "year": 2023,
+      "rating": 4.2,
+      "pages": 344,
+      "publisher": "Inkspire Press",
+      "isBorrowed": false,
+      "borrowedBy": null
+    },
+    {
+      "id": "8b08e2f8-c205-4367-85b4-7be775e37ed8",
+      "title": "Ad dolor vitae recus",
+      "author": "Dolor nihil id et et",
+      "genre": "Literary Fiction",
+      "year": 1986,
+      "pages": 64,
+      "publisher": "Delectus consectetu",
+      "isBorrowed": false,
+      "borrowedBy": null,
+      "rating": 5
+    },
+    {
+      "title": "Culpa Mia",
+      "author": "MAYA",
+      "genre": "Fantasy",
+      "year": 1972,
+      "pages": 52,
+      "publisher": "Lorem ea non aut quo",
+      "id": "7f1f565f-e281-4562-a5d3-bb30f55afe9d",
+      "isBorrowed": null,
+      "borrowedBy": null,
+      "rating": 3
+    }
+  ]
+}

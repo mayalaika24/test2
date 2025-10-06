@@ -6,12 +6,14 @@ interface IconProps {
   name: IconName;
   size?: number;
   color?: string;
+  variant?: 'Bold' | 'Linear' | 'Outline' | 'Broken' | 'Bulk' | 'TwoTone';
 }
 
 export default function Icon({
   name,
   size = 24,
   color = 'currentColor',
+  variant = 'Linear',
 }: IconProps) {
   const Component = Icons[name];
 
@@ -20,5 +22,5 @@ export default function Icon({
     return null;
   }
 
-  return <Component size={size} color={color} />;
+  return <Component variant={variant} size={size} color={color} />;
 }

@@ -59,3 +59,19 @@ export interface Temp<T = any> {
   action: Action;
   data: T;
 }
+
+export interface OptionType<T = any> {
+  id: T;
+  name: string;
+}
+
+export type Genre =
+  | 'Fantasy'
+  | 'Science Fiction'
+  | 'Mystery'
+  | 'Historical Fiction'
+  | 'Romance'
+  | 'Thriller'
+  | 'Drama'
+  | 'Adventure'
+  | 'Literary Fiction';

@@ -1,31 +1,20 @@
 import React, { useState } from 'react';
-import Label from './label';
 import useLocalTranslation from '../../custom-hooks/useLocalTranslation';
 import { PiSpinner } from 'react-icons/pi';
 import { SlArrowDown } from 'react-icons/sl';
-import SearchInput from './search-input';
-import { OptionType } from '../../types';
-import { InView } from 'react-intersection-observer';
-import LinearLoader from './linear-loader';
 import { cn } from '../../lib/utils';
-import ValidationField from './validation-field';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
+import { OptionType } from '../../types';
 
 const Select: React.FC<{
   options: Array<any>;
   label: string;
   onSelect: (val: number | string) => void;
-  loading?: boolean;
-  hasNextPage?: boolean;
-  fetchNextPage?: () => void;
-  onSearch?: (val: string) => void;
   value?: number | string;
-  paginate?: boolean;
-  isSearch?: boolean;
   error?: string;
   defaultValue?: string;
   required?: boolean;
@@ -33,24 +22,18 @@ const Select: React.FC<{
   options,
   label,
   onSelect,
-  loading = false,
-  hasNextPage = false,
-  fetchNextPage = () => {},
-  onSearch = () => {},
-  paginate = false,
-  isSearch = false,
   error,
   defaultValue = '',
   required = true,
 }) => {
   const { t } = useLocalTranslation();
-  const [selected, setSelected] = useState<OptionType>();
+  const [selected, setSelected] = useState<OptionType<string>>();
   const [open, setOpen] = useState(false);
 
-  function handleSelect(option: OptionType) {
+  function handleSelect(option: OptionType<string>) {
     setSelected(option);
     onSelect(option.id);
-    setOpen(false); // Close the dropdown after selection
+    setOpen(false);
   }
 
   return (
@@ -58,37 +41,24 @@ const Select: React.FC<{
       <DropdownMenuTrigger asChild>
         <div className="w-full">
           <div className="flex">
-            <Label className="text-start" label={t(label)} />
+            <label>{t(label)}</label>
             {required && <span className="text-red"> *</span>}
           </div>
           <div className="h-12 w-full border-1 border-primary rounded-md flex items-center justify-between ps-2 pe-4 cursor-pointer">
             <span className="text-sm text-black">
               {(selected && selected.name) || defaultValue}
             </span>
-            {loading ? (
-              <PiSpinner className="animate-spin" color={'var(--primary)'} />
-            ) : (
-              <SlArrowDown color={'var(--primary)'} />
-            )}
           </div>
-          {error && (
-            <ValidationField errorClassName="text-start" error={error} />
-          )}
+          {error && <span className="text-xs text-red">{error}</span>}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         className="w-full sm:max-w-[420px] max-w-[300px] pt-3"
         onInteractOutside={() => setOpen(false)}
       >
-        {paginate && isSearch && (
-          <div className="px-4">
-            <SearchInput className="w-full" onSearch={(val) => onSearch(val)} />
-          </div>
-        )}
         <div
           className={cn(
-            'max-h-[200px] overflow-y-auto overscroll-contain px-2',
-            isSearch ? 'mt-2' : ''
+            'max-h-[200px] overflow-y-auto overscroll-contain px-2'
           )}
         >
           {options.map((option, i) => {
@@ -102,22 +72,8 @@ const Select: React.FC<{
               </button>
             );
           })}
-          {options.length === 0 && !loading && (
+          {options.length === 0 && (
             <p className="text-center py-2 text-sm">{t('no_data')}</p>
-          )}
-          {loading && <LinearLoader />}
-          {paginate && (
-            <InView
-              as="div"
-              style={{ height: '1px' }}
-              onChange={(inView) => {
-                if (inView && hasNextPage && !loading) {
-                  fetchNextPage();
-                }
-              }}
-            >
-              <div style={{ height: '1px' }}></div>
-            </InView>
           )}
         </div>
       </DropdownMenuContent>

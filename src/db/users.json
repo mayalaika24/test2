@@ -1,0 +1,72 @@
+[
+  {
+    "id": 101,
+    "name": "Emily Carter",
+    "email": "emily.carter@example.com",
+    "phone": "+1-202-555-0198",
+    "address": {
+      "street": "124 Greenfield Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97205"
+    },
+    "memberSince": "2022-06-14",
+    "active": true
+  },
+  {
+    "id": 102,
+    "name": "Daniel Kim",
+    "email": "daniel.kim@example.com",
+    "phone": "+1-310-555-0243",
+    "address": {
+      "street": "89 Maple Street",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90017"
+    },
+    "memberSince": "2021-11-09",
+    "active": true
+  },
+  {
+    "id": 103,
+    "name": "Sophia Nguyen",
+    "email": "sophia.nguyen@example.com",
+    "phone": "+1-415-555-0132",
+    "address": {
+      "street": "742 Oceanview Blvd",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94109"
+    },
+    "memberSince": "2023-02-22",
+    "active": true
+  },
+  {
+    "id": 104,
+    "name": "Lucas Johnson",
+    "email": "lucas.johnson@example.com",
+    "phone": "+1-646-555-0107",
+    "address": {
+      "street": "57 Elmwood Drive",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10003"
+    },
+    "memberSince": "2020-09-15",
+    "active": true
+  },
+  {
+    "id": 105,
+    "name": "Ava Thompson",
+    "email": "ava.thompson@example.com",
+    "phone": "+1-305-555-0225",
+    "address": {
+      "street": "210 Sunset Road",
+      "city": "Miami",
+      "state": "FL",
+      "zip": "33130"
+    },
+    "memberSince": "2024-01-10",
+    "active": true
+  }
+]
