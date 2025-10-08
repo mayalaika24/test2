@@ -43,7 +43,16 @@
   user-select: none;
   font-size: 15px;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 input:focus,
 button:focus,
 textarea:focus {
@@ -83,10 +92,10 @@ button:disabled {
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: #1f3a8a;
+    --primary: rgb(31, 58, 138);
+    --secondary: #f1b41e;
     --primary-foreground: #e2e8f0;
     --alice-blue: #f1f5f9;
-    --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -135,38 +144,10 @@ button:disabled {
   justify-content: center;
 }
 
-.active-link {
-  background-color: var(--primary-foreground);
-  color: var(--primary);
-}
-.active-link svg path {
-  fill: var(--primary) !important;
-}
-.point-active {
-  background-color: var(--green);
-}
-.point-inactive {
-  background-color: var(--red);
-}
-.active {
-  background-color: var(--green-500);
-}
-.active,
-.text-active {
-  color: var(--green);
-}
-.blocked {
-  background-color: var(--red-500);
-  color: var(--red);
-}
-
-.inactive {
-  color: var(--gray-600);
-  background-color: var(--gray-50);
-}
-.blocked,
-.text-inactive {
-  color: var(--red);
+.tag {
+  background-color: #2989AF33;
+  padding: 0.25rem 0.5rem;
+  border-radius: 25px;
 }
 
 button:focus {
@@ -180,30 +161,3 @@ button:focus {
   max-width: 200px;
   z-index: 1000 !important;
 }
-/*------------------------- color picker -----------------------*/
-.react-colorful {
-  width: 125px !important;
-  height: 125px !important;
-  position: absolute !important;
-  z-index: 10 !important;
-  top: 50%;
-  transform: translateY(-50%);
-  left: calc(100% + 4px);
-  border-radius: 8px !important;
-}
-.react-colorful__hue.react-colorful__last-control {
-  height: 6px !important;
-}
-.react-colorful__pointer {
-  width: 16px !important;
-  height: 16px !important;
-}
-.react-colorful__saturation {
-  border-bottom: none !important;
-}
-/*------------------------------------------------------------*/
-/*--------------------- leaflet ------------------------------*/
-.leaflet-container {
-  border-radius: 8px;
-}
-/*------------------------------------------------------------*/

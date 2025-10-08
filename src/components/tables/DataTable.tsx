@@ -17,19 +17,20 @@ import useLocalTranslation from '../../custom-hooks/useLocalTranslation';
 import { Action } from '../../types';
 import TableActions from './table-actions';
 import { cn } from '../../lib/utils';
+import { IconName } from '../ui/icon';
 
 const headerClass =
-  'px-4 h-12 bg-gray-50 border-y-1 border-primary-foreground relative text-start no-wrap-text';
+  'px-4 h-12 bg-gray-50 dark:bg-[#F5F5F51A] dark:text-silver border-y-1 border-primary-foreground relative text-start no-wrap-text';
 const containerClass =
-  'bg-white shadow-table-shadow rounded-2xl flex flex-col max-h-full';
+  'bg-white dark:bg-dark-500 shadow-table-shadow rounded-2xl flex flex-col max-h-full';
 
 interface DataTableProps<TData> {
   data: TData[];
   columns: ColumnDef<TData>[];
   caption?: string;
   className?: string;
-  actions: Array<Action>;
-  onAction: (params: { action: Action; data: TData }) => void;
+  actions: Array<IconName>;
+  onAction: (params: { action: IconName; data: TData }) => void;
   children?: React.ReactNode;
 }
 
@@ -54,7 +55,7 @@ export function DataTable<TData>({
     <div className={cn(containerClass, className)}>
       {children || <div className="h-10" />}
 
-      <Table>
+      <Table className='bg-white dark:bg-dark-500'>
         {caption && (
           <caption className="text-left p-4 text-sm text-gray-500">
             {caption}
@@ -93,7 +94,7 @@ export function DataTable<TData>({
                 ))}
                 <TableCell>
                   <TableActions
-                    onAction={(action: Action) =>
+                    onAction={(action: IconName) =>
                       onAction({ action, data: row.original })
                     }
                     actions={actions}

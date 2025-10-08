@@ -1,7 +1,6 @@
-interface Borrower {
-  id: number;
+export interface Borrower {
+  id: string;
   name: string;
-  borrowedDate: string;
 }
 
 export interface Book {
@@ -14,5 +13,5 @@ export interface Book {
   pages: number;
   publisher: string;
   isBorrowed: boolean;
-  borrowedBy?: Borrower | null;
+  borrowedBy?: Borrower;
 }

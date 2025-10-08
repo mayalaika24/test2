@@ -14,6 +14,8 @@ import { Language, LanguageCode } from '../../types';
 import { useAuth } from '../../contexts/useAuth';
 import { cn } from '../../lib/utils';
 import useNavigation from '../../custom-hooks/useNavigation';
+import Icon from '../ui/icon';
+import { useDarkMode } from '../../custom-hooks/useDarkMode';
 
 const FLAG_IMAGES: Record<LanguageCode, string> = {
   en: '/icons/us.svg',
@@ -23,6 +25,7 @@ const imageIconClass = 'h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full';
 const Navbar = () => {
   const { logout, isLoggingOut, user } = useAuth();
   const { t, currentLanguage, changeLanguage } = useLocalTranslation();
+  const {isDark, toggleDark} = useDarkMode();
   const buttons = useMemo(() => {
     return [
       {
@@ -59,14 +62,17 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 md:h-20 w-full items-center border-b border-gray-200 bg-white lg:px-custom-default md:px-custom-md px-custom-sm">
+    <header className="sticky top-0 z-10 flex h-16 md:h-20 w-full items-center border-b border-gray-200 bg-white dark:bg-dark-500 lg:px-custom-default md:px-custom-md px-custom-sm">
       <div className="flex items-center gap-4 md:w-side">
-        Logo will goes here
+        <Icon name='Book1' size={40} color={isDark ? 'var(--secondary)' : 'var(--primary)'} />
       </div>
 
       <div className="flex flex-1 items-center justify-between gap-2 md:gap-4">
         <div></div>
         <div className="flex items-center gap-2 md:gap-3 lg:gap-5">
+          <button onClick={toggleDark}>
+            <Icon size={30} name={isDark ? 'Sun1' : 'Moon'} />
+          </button>
           <DropdownMenu>
             <DropdownMenuTrigger aria-label={t('change_language')}>
               <img
@@ -101,10 +107,10 @@ const Navbar = () => {
             <PopoverTrigger className="flex items-center gap-1 md:gap-3">
               <img
                 className={imageIconClass}
-                src={`${user?.image || `https://ui-avatars.com/api/?name=${user?.firstName + ' ' + user?.lastName}&background=F1F5F9&color=1F3A8A`}`}
+                src={`https://ui-avatars.com/api/?name=${user?.firstName + ' ' + user?.lastName}&background=F1F5F9&color=1F3A8A`}
                 alt={t('user_avatar')}
               />
-              <div className="hidden lg:flex flex-col items-start text-base text-black">
+              <div className="hidden lg:flex flex-col items-start text-base text-black dark:text-silver">
                 <span>{`${user?.firstName} ${user?.lastName}`}</span>
               </div>
               <img

@@ -8,8 +8,8 @@ const RenderField: React.FC<{
 }> = ({ children, label, className = 'w-full' }) => {
   const { t } = useLocalTranslation();
   return (
-    <div className={cn(className, 'flex flex-col gap-0.5')}>
-      <label className="text-black">{t(label)}:</label>
+    <div className={cn(className, 'flex flex-row gap-0.5')}>
+      <label className="text-black dark:text-silver">{t(label)}:</label>
       {children}
     </div>
   );

@@ -18,7 +18,7 @@ function Dialog({
   header,
   onClose,
   passedData = undefined,
-  onSuccess
+  onSuccess,
 }: {
   passedData?: Book;
   header: string;
@@ -49,23 +49,23 @@ function Dialog({
       pages: Number(data.pages),
       id: passedData ? passedData.id : uuidv4(),
       isBorrowed: passedData ? passedData.isBorrowed : false,
-      borrowedBy: passedData ? passedData.borrowedBy : null,
+      borrowedBy: passedData ? passedData.borrowedBy : undefined,
       rating: passedData
         ? passedData.rating
         : Math.floor(Math.random() * 5) + 1,
     };
     if (passedData) {
       booksService.updateBook(passedData.id, payload);
+      toast.success(t('Book Edited Successfully'));
     } else {
       booksService.addBook(payload);
+      toast.success(t('Book Added Successfully'));
     }
     onSuccess(payload);
     handleTriggerValue();
-    toast.success('book added successfully');
   };
   useEffect(() => {
     if (passedData) {
-      console.log(passedData);
       reset({
         title: passedData.title,
         publisher: passedData.publisher,
@@ -91,17 +91,17 @@ function Dialog({
         />
         <Input
           {...register('author')}
-          label="author"
+          label="Author"
           error={errors.author?.message}
         />
         <Input
           {...register('publisher')}
-          label="publisher"
+          label="Publisher"
           error={errors.publisher?.message}
         />
         <Select
           defaultValue={watch('genre')}
-          label="genre"
+          label="Genre"
           options={options}
           onSelect={(val) =>
             setValue('genre', val as Genre, { shouldValidate: true })
@@ -111,12 +111,12 @@ function Dialog({
         <Input
           type="number"
           {...register('pages')}
-          label="pages"
+          label="Pages"
           error={errors.pages?.message}
         />
         <Input
           {...register('year')}
-          label="year"
+          label="Year"
           error={errors.year?.message}
         />
       </form>

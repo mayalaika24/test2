@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { LinkType } from '../../types';
 import useToggleBoolean from '../../custom-hooks/useToggleBoolean';
 import { useAppSelector } from '../../custom-hooks/useRedux';
+import Icon from '../ui/icon';
 interface CustomLinkProps {
   route: LinkType;
 }
@@ -27,10 +28,10 @@ const CustomLink: React.FC<CustomLinkProps> = ({ route }) => {
     'transition-all',
     isOpen
       ? 'lg:ps-custom-default md:ps-custom-md ps-custom-sm md:pe-4'
-      : 'ps-4',
+      : 'ps-2',
     isActive && !hasChildren
-      ? 'bg-neutral active-link text-primary'
-      : 'text-gray',
+      ? 'bg-neutral active-link text-primary dark:text-secondary'
+      : 'text-gray dark:text-silver',
   ]
     .filter(Boolean)
     .join(' ');
@@ -48,10 +49,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({ route }) => {
         <div className="flex items-center">
           <div className="w-8">
             {route.icon && (
-              <div
-                className="w-full"
-                dangerouslySetInnerHTML={{ __html: route.icon }}
-              />
+              <Icon name={route.icon} />
             )}
           </div>
           <span

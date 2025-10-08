@@ -5,7 +5,7 @@ const ReactQueryProvider: React.FC<ChildrenType> = ({ children }) => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        refetchOnWindowFocus: false,
+        refetchOnWindowFocus: true,
         retry: 0,
         staleTime: 1000 * 60 * 5,
         // staleTime: 1000 * 30, // 30 seconds - data becomes stale after this time

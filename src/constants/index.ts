@@ -10,3 +10,5 @@ export const GENRE = [
   'Adventure',
   'Literary Fiction',
 ] as const;
+
+export const phone_regex = /^09\d{8}$/

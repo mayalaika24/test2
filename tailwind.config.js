@@ -15,6 +15,17 @@ export default {
   				DEFAULT: 'var(--primary)',
   				foreground: 'var(--primary-foreground)'
   			},
+			silver: {
+				DEFAULT: '#F5F5F5'
+			},
+			secondary: {
+				DEFAULT: '#f1b41e',
+				foreground: 'hsl(var(--secondary-foreground))'
+			},
+			dark: {
+				DEFAULT: '#404040',
+				500: '#191919'
+			},
 			'alice-blue': {
 				DEFAULT: 'var(--alice-blue)'
 			},
@@ -45,10 +56,6 @@ export default {
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: '#3B82F6',
-  				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',

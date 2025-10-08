@@ -13,11 +13,11 @@ function useColumns() {
       },
       {
         accessorKey: 'author',
-        header: t('author'),
+        header: t('Author'),
       },
       {
         accessorKey: 'rating',
-        header: t('rating'),
+        header: t('Rating'),
         cell: ({ row }) => {
           const rating = row.getValue('rating') as number;
           const array = new Array(Math.ceil(Number(rating))).fill('');

@@ -32,7 +32,7 @@ const DeleteDialog: React.FC<DialogDataType & { onSubmit: VoidFunction }> = ({
     >
       <p>
         {t('insure_delete')}{' '}
-        <span className="text-black uppercase font-semibold">{children}?</span>
+        <span className="text-black dark:text-silver uppercase font-semibold">{children}?</span>
       </p>
     </DialogLayout>
   );

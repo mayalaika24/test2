@@ -4,12 +4,12 @@ import { DialogClose } from '../../../components/ui/dialog';
 import useLocalTranslation from '../../../custom-hooks/useLocalTranslation';
 import RenderField from '../../../components/ui/render-field';
 import Icon from '../../../components/ui/icon';
-import { Book } from '../../../types/books';
+import { User } from '../../../types/users';
 
 type Props = {
   onClose: VoidFunction;
   header: string;
-  data: Book;
+  data: User;
 };
 
 function ViewDialog({ onClose, data, header }: Props) {
@@ -27,25 +27,19 @@ function ViewDialog({ onClose, data, header }: Props) {
     >
       <div className="flex flex-col gap-3">
         <div className="w-20 flex items-center justify-center aspect-square rounded-full bg-primary-foreground mx-auto">
-          <Icon name="Book" color="var(--primary)" />
+          <Icon name="User" color="var(--primary)" />
         </div>
-        <RenderField label="Author">{data.author}</RenderField>
-        <RenderField label="Genre">{data.genre}</RenderField>
-        <RenderField label="Year">{data.year}</RenderField>
-        <RenderField label="Pages">{data.genre}</RenderField>
-        <RenderField label="Publisher">{data.publisher}</RenderField>
-        <RenderField label="Rating">
-          {[
-            ...new Array(data.rating).fill('').map((_, i) => (
-              <div key={i} className="flex items-center gap-0.25">
-                <Icon color="#FFBF00" name="Star1" variant={'Bulk'} />
-              </div>
-            )),
-          ]}
+        <RenderField label="Name">{data.name}</RenderField>
+        <RenderField label="Email">{data.email}</RenderField>
+        <RenderField label="Phone">{data.phone}</RenderField>
+        <RenderField label="Address">{data.address}</RenderField>
+        <RenderField label="Books">
+          <div className='flex items-center gap-2 flex-wrap'>
+                      {data.borrowedBooks.map((el) => (
+            <div className='tag text-sm text-nowrap'>{el.title}</div>
+          ))}
+          </div>
         </RenderField>
-        {data.borrowedBy && (
-          <RenderField label="Borrowed By">{data.borrowedBy?.name}</RenderField>
-        )}
       </div>
     </DialogLayout>
   );

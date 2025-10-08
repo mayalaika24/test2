@@ -15,7 +15,7 @@ function App() {
     setDir(currentLanguage);
   }, [currentLanguage]);
   return (
-    <div className="bg-light-blue">
+    <div className="bg-light-blue dark:bg-dark text-black dark:text-white">
       <Toaster />
       <ReduxProvider>
         <AuthProvider>

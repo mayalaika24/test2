@@ -32,7 +32,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className={cn('space-y-1', containerClassName, 'relative')}>
         {label && (
           <label
-            className={cn('text-black capitalize text-sm', labelClassName)}
+            className={cn('text-black dark:text-silver capitalize text-sm', labelClassName)}
           >
             {t(label)}
             {required && <span className="text-red">*</span>}
@@ -44,14 +44,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             'h-12 border-1 w-full rounded-md ps-2',
             error && 'border-destructive focus-visible:ring-destructive',
             className,
-            theme === 'gray'
-              ? 'border-primary-foreground'
-              : 'border-primary read-only:bg-gray-50 read-only:border-primary-foreground'
+            'border-primary dark:text-white dark:border-silver read-only:bg-gray-50 read-only:border-primary-foreground bg-white dark:bg-dark'
           )}
           ref={ref}
           {...props}
         />
-        {error && <span className="text-xs text-red">{error}</span>}
+        {error && <span className="text-xs text-red">{t(error)}</span>}
       </div>
     );
   }

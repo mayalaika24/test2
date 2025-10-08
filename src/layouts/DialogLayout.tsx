@@ -14,6 +14,7 @@ import useLocalTranslation from '../custom-hooks/useLocalTranslation';
 import { cn } from '../lib/utils';
 import useToggleBoolean from '../custom-hooks/useToggleBoolean';
 import useEffectOnUpdate from '../custom-hooks/useEffectOnUpdate';
+import Icon from '../components/ui/icon';
 const DialogLayout: React.FC<
   DialogLayoutType &
     ClassNameType & {
@@ -58,17 +59,17 @@ const DialogLayout: React.FC<
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent
         className={cn(
-          'max-h-[90vh] w-[90%] overflow-hidden',
+          'max-h-[90vh] w-[90%] overflow-hidden dark:bg-dark-500 dark:text-white',
           mini ? 'max-w-[450px]' : 'max-w-[910px]',
           className
         )}
       >
         <DialogHeader className="flex flex-row items-center justify-between">
           <DialogTitle className="text-lg font-semibold">
-            {t(header)}
+            {header}
           </DialogTitle>
           <DialogClose>
-            <img src="/icons/x.svg" />
+            <Icon name="CloseCircle" />
           </DialogClose>
         </DialogHeader>
         <DialogDescription

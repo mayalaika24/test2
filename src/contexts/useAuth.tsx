@@ -1,21 +1,27 @@
 import React, { createContext, useContext, useState } from 'react';
-import { ApiResponse, ChildrenType } from '../types';
-import { AuthResponse } from '../types/auth';
-import { authService } from '../services/AuthService';
+import { ChildrenType } from '../types';
+// import { AuthResponse } from '../types/auth';
 import Cookies from 'universal-cookie';
 import { toast } from 'sonner';
 import Repository from '../api/Repository';
 import useToggleBoolean from '../custom-hooks/useToggleBoolean';
-import { FormValues } from '../schema/login';
 const cookies = new Cookies();
 
-type User = AuthResponse | null;
-
+// type User = AuthResponse | null;
+interface  credentials {
+  username: string,
+  password: string
+}
+interface UserData {
+  firstName: string,
+  lastName: string,
+  accessToken: string
+}
 type AuthContextType = {
-  user: User | null;
+  user: UserData | null;
   isAuthenticated: boolean;
   isLoggingOut: boolean;
-  login: (credentials: FormValues) => Promise<void>;
+  login: (payload: credentials) => Promise<boolean>;
   logout: () => Promise<boolean>;
   checkAuth: () => Promise<void>;
 };
@@ -23,7 +29,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<ChildrenType> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<UserData | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const { value: isLoggingOut, handleSetValue: handleSetIsLoggingOut } =
     useToggleBoolean();
@@ -41,14 +47,25 @@ export const AuthProvider: React.FC<ChildrenType> = ({ children }) => {
     }
   };
 
-  const login = async (credentials: FormValues) => {
+  const login = async (data: {password: string, username: string}): Promise<boolean> => {
+    if(data.username !== 'maya' && data.password !== '123') {
+      return false
+    }
     try {
-      const data: AuthResponse = await authService.login(credentials);
-      cookies.set('user-data', data);
-      setUser(data);
-      setRepositoryHeaders(data.accessToken);
+      cookies.set('user-data', {
+      firstName: 'Maya',
+      lastName: 'Layka',
+      accessToken: '123',
+    });
+      setUser({
+      firstName: 'Maya',
+      lastName: 'Layka',
+      accessToken: '123',
+    });
+      setRepositoryHeaders('123');
       setIsAuthenticated(true);
       toast.success('Logged in successfully');
+      return true
     } catch (error) {
       console.error('Login failed:', error);
       throw error;
@@ -67,7 +84,6 @@ export const AuthProvider: React.FC<ChildrenType> = ({ children }) => {
       setIsAuthenticated(false);
       setRepositoryHeaders(null);
       cookies.set('user-data', null);
-      toast.success('Logged out successfully');
       return false;
     } catch (error) {
       return false;

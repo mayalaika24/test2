@@ -1,4 +1,5 @@
 import React from 'react';
+import { IconName } from '../components/ui/icon';
 export interface DialogDataType {
   header: string;
   children?: React.ReactNode;
@@ -13,19 +14,18 @@ export interface DialogLayoutType
 export interface ChildrenType {
   children: React.ReactNode;
 }
-export interface Link {
-  path: string;
-  title: string;
-}
 
 export interface ApiResponse {
   total: number;
   skip: number;
   limit: number;
 }
-
+export interface Link {
+  path: string;
+  title: string;
+}
 export interface LinkType extends Link {
-  icon?: string;
+  icon?: IconName;
   children?: Array<Link>;
 }
 
@@ -41,22 +41,28 @@ export interface ClassNameType {
   className?: string;
 }
 
-export type Action = 'view' | 'update' | 'delete' | 'create';
+export type Action =
+  | 'view'
+  | 'update'
+  | 'delete'
+  | 'create'
+  | 'book'
+  | 'return';
 
 export interface ActionsProps {
-  actions: Action[];
-  onAction: VoidFun<Action>;
+  actions: IconName[];
+  onAction: VoidFun<IconName>;
 }
 
 export type VoidFun<T = any> = (val: T) => void;
 
 export interface ActionButtonProps {
-  action: Action;
-  onAction: VoidFun<Action>;
+  action: IconName;
+  onAction: VoidFun<IconName>;
 }
 
 export interface Temp<T = any> {
-  action: Action;
+  action: IconName;
   data: T;
 }
 

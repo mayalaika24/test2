@@ -1,11 +1,11 @@
 export type Temp<R> = {
-  action: Action;
+  action: IconName;
   data: R;
 } | null;
 
 // Updated useTempItem hook
 import { useState } from 'react';
-import { Action } from '../types';
+import { IconName } from '../components/ui/icon';
 
 const useTempItem = <T,>(): {
   temp: Temp<T>;

@@ -1,60 +1,31 @@
 {
   "books": [
     {
-      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-      "title": "The Whispering Grove",
-      "author": "Lena Moreau",
-      "genre": "Fantasy",
-      "year": 2021,
-      "rating": 4.6,
-      "pages": 412,
-      "publisher": "Silverleaf Press",
-      "isBorrowed": true,
-      "borrowedBy": {
-        "id": 101,
-        "name": "Emily Carter",
-        "borrowedDate": "2025-09-18"
-      }
-    },
-    {
-      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb65",
-      "title": "Fragments of Tomorrow",
-      "author": "Kai Donovan",
-      "genre": "Science Fiction",
-      "year": 2023,
-      "rating": 4.3,
-      "pages": 389,
-      "publisher": "Orion Books",
-      "isBorrowed": false,
-      "borrowedBy": null
-    },
-    {
-      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcbsd",
       "title": "A Study in Smoke",
       "author": "R. J. Calder",
       "genre": "Mystery",
       "year": 2019,
-      "rating": 4.1,
       "pages": 301,
       "publisher": "Blackbird Publishing",
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcbsd",
       "isBorrowed": true,
-      "borrowedBy": {
-        "id": 102,
-        "name": "Daniel Kim",
-        "borrowedDate": "2025-10-01"
-      }
+      "borrowedBy": null,
+      "rating": 4
     },
     {
-      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dss6d",
       "title": "Letters from the Lighthouse",
       "author": "Eliza Stone",
       "genre": "Historical Fiction",
       "year": 2020,
-      "rating": 4.8,
       "pages": 457,
       "publisher": "Maple House",
-      "isBorrowed": false,
-      "borrowedBy": null
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dss6d",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": "104",
+        "name": "Lucas Johnson"
+      },
+      "rating": 5
     },
     {
       "id": "9b1deb4d-3b7d-4bad-9bdd-2b0de8b3dcb6d",
@@ -62,27 +33,14 @@
       "author": "Noah Sinclair",
       "genre": "Romance",
       "year": 2022,
-      "rating": 4.5,
+      "rating": 3,
       "pages": 332,
       "publisher": "Oceanheart Books",
       "isBorrowed": true,
       "borrowedBy": {
-        "id": 103,
-        "name": "Sophia Nguyen",
-        "borrowedDate": "2025-09-27"
+        "id": "104",
+        "name": "Lucas Johnson"
       }
-    },
-    {
-      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0ax7b3dcb6d",
-      "title": "The Last Equation",
-      "author": "Dr. Mira Patel",
-      "genre": "Thriller",
-      "year": 2024,
-      "rating": 4.7,
-      "pages": 379,
-      "publisher": "PulseLine Press",
-      "isBorrowed": false,
-      "borrowedBy": null
     },
     {
       "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcmo6",
@@ -95,9 +53,8 @@
       "publisher": "Crescent Books",
       "isBorrowed": true,
       "borrowedBy": {
-        "id": 104,
-        "name": "Lucas Johnson",
-        "borrowedDate": "2025-09-30"
+        "id": "104",
+        "name": "Lucas Johnson"
       }
     },
     {
@@ -106,11 +63,14 @@
       "author": "Elias Grant",
       "genre": "Adventure",
       "year": 2021,
-      "rating": 4.4,
+      "rating": 3,
       "pages": 410,
       "publisher": "Compass & Quill",
-      "isBorrowed": false,
-      "borrowedBy": null
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": "31b2e32a-de1e-4b76-8680-da144aa9035e",
+        "name": "Pamela Howell"
+      }
     },
     {
       "id": "9b1deeb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
@@ -118,15 +78,11 @@
       "author": "Tessa Rowe",
       "genre": "Science Fiction",
       "year": 2025,
-      "rating": 4.9,
+      "rating": 1,
       "pages": 368,
       "publisher": "Nova Horizon",
       "isBorrowed": true,
-      "borrowedBy": {
-        "id": 105,
-        "name": "Ava Thompson",
-        "borrowedDate": "2025-10-03"
-      }
+      "borrowedBy": null
     },
     {
       "id": "9b1deb4d-3b7d-4xld-9bdd-2b0d7b3dcb6d",
@@ -134,23 +90,14 @@
       "author": "Owen Hart",
       "genre": "Literary Fiction",
       "year": 2023,
-      "rating": 4.2,
+      "rating": 3,
       "pages": 344,
       "publisher": "Inkspire Press",
-      "isBorrowed": false,
-      "borrowedBy": null
-    },
-    {
-      "id": "8b08e2f8-c205-4367-85b4-7be775e37ed8",
-      "title": "Ad dolor vitae recus",
-      "author": "Dolor nihil id et et",
-      "genre": "Literary Fiction",
-      "year": 1986,
-      "pages": 64,
-      "publisher": "Delectus consectetu",
-      "isBorrowed": false,
-      "borrowedBy": null,
-      "rating": 5
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": "104",
+        "name": "Lucas Johnson"
+      }
     },
     {
       "title": "Culpa Mia",
@@ -160,9 +107,160 @@
       "pages": 52,
       "publisher": "Lorem ea non aut quo",
       "id": "7f1f565f-e281-4562-a5d3-bb30f55afe9d",
-      "isBorrowed": null,
-      "borrowedBy": null,
+      "isBorrowed": false,
       "rating": 3
+    },
+    {
+      "title": "Dolore et consectetu",
+      "author": "Qui atque distinctio",
+      "genre": "Mystery",
+      "year": 2002,
+      "pages": 5000,
+      "publisher": "Facere id minus fug",
+      "id": "3c0be5af-2902-4087-b6ea-942f57cbd903",
+      "isBorrowed": true,
+      "borrowedBy": null,
+      "rating": 5
+    },
+    {
+      "id": "8f9ebf0a-3bee-4ceb-94ea-8604d6d64a11",
+      "title": "In dolores eaque ali",
+      "author": "Aut soluta provident",
+      "genre": "Historical Fiction",
+      "year": 1979,
+      "pages": 66,
+      "publisher": "Pariatur Ea dolor a",
+      "isBorrowed": true,
+      "borrowedBy": {
+        "id": "ceb56747-e7ca-4372-a69f-cd8d96468f54",
+        "name": "Finn Cunningham"
+      },
+      "rating": 5
+    },
+    {
+      "id": "27d5190f-e683-45c0-9122-a7ab64e293ee",
+      "title": "Totam eaque velit ne",
+      "author": "Quos sed labore sequ",
+      "genre": "Fantasy",
+      "year": 1982,
+      "pages": 52,
+      "publisher": "Suscipit quis laboru",
+      "isBorrowed": false,
+      "rating": 1
+    },
+    {
+      "id": "15614c8f-ba80-4450-8bcd-f54e2eb82796",
+      "title": "Non magni in nostrud",
+      "author": "Sint et quo consequ",
+      "genre": "Science Fiction",
+      "year": 1990,
+      "pages": 64,
+      "publisher": "Cupiditate voluptas ",
+      "isBorrowed": false,
+      "rating": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "Lucas Johnson",
+      "email": "lucas.johnson@example.com",
+      "phone": "0944559115",
+      "address": "57 Elmwood Drive",
+      "borrowedBooks": [],
+      "id": "104"
+    },
+    {
+      "name": "MacKensie Henson",
+      "email": "kikorafam@mailinator.com",
+      "phone": "0944662226",
+      "address": "Optio sunt non inci",
+      "borrowedBooks": [],
+      "id": "d8a6e964-e44c-42f1-bece-8f163d1ed5e3"
+    },
+    {
+      "name": "Blaze Daniel",
+      "email": "zevovo@mailinator.com",
+      "phone": "0956653655",
+      "address": "Aut odit doloribus c",
+      "borrowedBooks": [],
+      "id": "58fafa73-7120-4ec0-8a47-e33f2c46b4d3"
+    },
+    {
+      "name": "Jolene Brady",
+      "email": "sajurupy@mailinator.com",
+      "phone": "0922323236",
+      "address": "Et enim impedit sun",
+      "borrowedBooks": [],
+      "id": "2b62b327-5efc-4ac6-9528-d65f8c7804aa"
+    },
+    {
+      "name": "Finn Cunningham",
+      "email": "sityxuqo@mailinator.com",
+      "phone": "0923232555",
+      "address": "Harum reprehenderit ",
+      "borrowedBooks": [
+        {
+          "id": "8f9ebf0a-3bee-4ceb-94ea-8604d6d64a11",
+          "title": "In dolores eaque ali"
+        }
+      ],
+      "id": "ceb56747-e7ca-4372-a69f-cd8d96468f54"
+    },
+    {
+      "name": "Elizabeth 000",
+      "email": "facahazeb@mailinator.com",
+      "phone": "0953355511",
+      "address": "Cum ullamco sit cup",
+      "borrowedBooks": [],
+      "id": "bb6dd064-1713-496d-a337-b5735018d84e"
+    },
+    {
+      "name": "Reese Robertson",
+      "email": "jiruco@mailinator.com",
+      "phone": "0922356555",
+      "address": "Irure esse ullamco ",
+      "borrowedBooks": [],
+      "id": "7580cd1e-349b-45bc-9d12-febf0efbc784"
+    },
+    {
+      "name": "Gil Kane",
+      "email": "zevi@mailinator.com",
+      "phone": "0922355655",
+      "address": "Quisquam est labore ",
+      "borrowedBooks": [],
+      "id": "589824a5-54a9-4ad9-bafc-9736202c0da7"
+    },
+    {
+      "name": "Pamela Howell",
+      "email": "beqoxyz@mailinator.com",
+      "phone": "0956565655",
+      "address": "Dolor recusandae Si",
+      "borrowedBooks": [],
+      "id": "31b2e32a-de1e-4b76-8680-da144aa9035e"
+    },
+    {
+      "name": "Leo Hines",
+      "email": "suzi@mailinator.com",
+      "phone": "0923235555",
+      "address": "Pariatur Excepturi ",
+      "borrowedBooks": [],
+      "id": "e7aac582-f2d7-4eea-9544-b96cbb7f0702"
+    },
+    {
+      "id": "a802b0b6-aa55-4a38-aee0-d9b34de2163c",
+      "name": "fcdf",
+      "email": "latakia.governorate.hub.driver@example.com",
+      "phone": "0944559115",
+      "address": "eded",
+      "borrowedBooks": []
+    },
+    {
+      "id": "e09ccd6f-6564-40b0-8499-e598a4708427",
+      "name": "Nicholas Alston",
+      "email": "meduvady@mailinator.com",
+      "phone": "0956565565",
+      "address": "Aute id quia qui ea",
+      "borrowedBooks": []
     }
   ]
 }

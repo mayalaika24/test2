@@ -13,7 +13,7 @@ import { OptionType } from '../../types';
 const Select: React.FC<{
   options: Array<any>;
   label: string;
-  onSelect: (val: number | string) => void;
+  onSelect: (val: string) => void;
   value?: number | string;
   error?: string;
   defaultValue?: string;
@@ -41,19 +41,19 @@ const Select: React.FC<{
       <DropdownMenuTrigger asChild>
         <div className="w-full">
           <div className="flex">
-            <label>{t(label)}</label>
+            <label className='text-black dark:text-white dark:border-silver'>{t(label)}</label>
             {required && <span className="text-red"> *</span>}
           </div>
-          <div className="h-12 w-full border-1 border-primary rounded-md flex items-center justify-between ps-2 pe-4 cursor-pointer">
-            <span className="text-sm text-black">
+          <div className="h-12 w-full bg-white dark:border-silver dark:bg-dark border-1 border-primary rounded-md flex items-center justify-between ps-2 pe-4 cursor-pointer">
+            <span className="text-sm text-black dark:text-white dark:border-silver">
               {(selected && selected.name) || defaultValue}
             </span>
           </div>
-          {error && <span className="text-xs text-red">{error}</span>}
+          {error && <span className="text-xs text-red">{t(error)}</span>}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="w-full sm:max-w-[420px] max-w-[300px] pt-3"
+        className="w-full sm:max-w-[420px] max-w-[300px] pt-3 dark:bg-dark"
         onInteractOutside={() => setOpen(false)}
       >
         <div
@@ -65,7 +65,7 @@ const Select: React.FC<{
             return (
               <button
                 onClick={() => handleSelect(option)}
-                className="w-full py-2 hover:bg-alice-blue rounded-sm text-start px-3 text-black"
+                className="w-full py-2 hover:bg-alice-blue dark:hover:bg-[rgba(255,255,255,0.2)] rounded-sm text-start px-3 text-black dark:text-silver"
                 key={i}
               >
                 {option.name}
